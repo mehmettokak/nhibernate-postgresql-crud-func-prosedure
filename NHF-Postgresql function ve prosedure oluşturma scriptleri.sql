@@ -7,14 +7,14 @@ CREATE TABLE personprofil (
 
 
 insert into personprofil (firstname,lastname) values 
-													 ('Murat','TOKAK'),
-													 ('Süleyman','TOKAK'),
-													 ('Ali','TOKAK'),
-													 ('Veli','TOKAK'),
+													 ('Mehmet','TOKAK'),
+													 ('Mehmet1','TOKAK'),
+													 ('Mehmet2','TOKAK'),
+													 ('Mehmet3','TOKAK'),
 													 ('Ahmet','TOKAK'),
-													 ('Esat','TOKAK'),
-													 ('Baran','TOKAK'),
-													 ('Berfin','TOKAK');
+													 ('Mehmet4','TOKAK'),
+													 ('Mehmet5','TOKAK'),
+													 ('Mehmet5','TOKAK');
 													 
 													
 create or replace function getpersonlist()
@@ -39,7 +39,7 @@ begin
 	
 	insert  into  personprofil (firstname,lastname) values(firstname,lastname);
 	
-resultText=concat(firstname,' ',lastname,' kayýt eklendi');
+resultText=concat(firstname,' ',lastname,' kayÃ½t eklendi');
 end 
 $$ language 'plpgsql';
 
@@ -55,7 +55,7 @@ as $$
 declare rslt varchar(100);
 begin 
 	insert  into  personprofil (firstname,lastname) values(firstname,lastname);
-rslt=concat(firstname,' ',lastname,' kayýt eklendi');
+rslt=concat(firstname,' ',lastname,' kayÃ½t eklendi');
 	return  rslt;
 end $$ language 'plpgsql';
 
@@ -68,7 +68,7 @@ as $$
 declare rslt varchar(100);
 begin 
 	update personprofil set firstname=fname,lastname=lname where personprofilid=id;
-rslt=concat(fname,' ',lname,' kayýt güncellendi. (F)');
+rslt=concat(fname,' ',lname,' kayÃ½t gÃ¼ncellendi. (F)');
 	return  rslt;
 end $$ language 'plpgsql';
 
@@ -82,7 +82,7 @@ begin
 	
 	update personprofil set firstname=fname,lastname=lname where personprofilid=id;
 	
-resultText=concat(fname,' ',lname,' kayýt guncellendi.(P)');
+resultText=concat(fname,' ',lname,' kayÃ½t guncellendi.(P)');
 end 
 $$ language 'plpgsql';
 
@@ -96,7 +96,7 @@ as $$
 declare rslt varchar(100);
 begin 
 	delete from personprofil where personprofilid=id;
-rslt=concat('personprofilid= ',id,' olan  kayýt silindi. (F)');
+rslt=concat('personprofilid= ',id,' olan  kayÃ½t silindi. (F)');
 	return  rslt;
 end $$ language 'plpgsql';
 
@@ -112,7 +112,7 @@ begin
 	
 	delete from personprofil where personprofilid=id;
 	
-resultText=concat('personprofilid= ',id,' olan  kayýt silindi. (P)');
+resultText=concat('personprofilid= ',id,' olan  kayÃ½t silindi. (P)');
 end 
 $$ language 'plpgsql';
 
